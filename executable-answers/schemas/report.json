@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Verification Report v0.1",
+  "type": "object",
+  "properties": {
+    "results": { "type": "array" },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "passed": { "type": "integer" },
+        "failed": { "type": "integer" },
+        "unchecked": { "type": "integer" },
+        "error": { "type": "integer" }
+      },
+      "required": ["passed", "failed", "unchecked", "error"]
+    }
+  },
+  "required": ["results", "summary"]
+}

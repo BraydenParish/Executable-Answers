@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "executable-answers"
+version = "0.1.0"
+description = "Executable Answers v0.1 — Claim-Validator MVP"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "requests>=2.31.0",
+    "hypothesis>=6.108.0",
+    "pytest>=7.0.0"
+]
+
+[project.scripts]
+exa-validate = "exa.cli:main"
+exa-report = "exa.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "executable-answers"}
+
+[tool.setuptools.packages.find]
+where = ["executable-answers"]
