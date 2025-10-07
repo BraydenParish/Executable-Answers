@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ClaimGraph v0.1",
+  "type": "object",
+  "properties": {
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "type": { "const": "numeric_growth" },
+          "text": { "type": "string" },
+          "evidence": { "type": "array" },
+          "calc": {
+            "type": "object",
+            "properties": {
+              "base": { "type": "number" },
+              "current": { "type": "number" },
+              "delta": { "type": "number" },
+              "pct": { "type": "number" }
+            },
+            "additionalProperties": true
+          },
+          "status": { "enum": ["unchecked", "passed", "failed", "error"] }
+        },
+        "required": ["id", "type", "text", "calc", "status"],
+        "additionalProperties": true
+      }
+    }
+  },
+  "required": ["claims"]
+}
